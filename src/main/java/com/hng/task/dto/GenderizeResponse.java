@@ -13,10 +13,10 @@ public class GenderizeResponse {
     private final Boolean isConfident;
     private final LocalDateTime processedAt;
 
-    public GenderizeResponse(String gender, String name, Float probability, Integer sampleSize) {
-        this.gender = gender;
+    public GenderizeResponse(String name, String gender,  Float probability, Integer sampleSize) {
         this.isConfident = (probability != null && probability >= 0.7 && sampleSize >=100);
         this.name = name;
+        this.gender = gender;
         this.probability = probability;
         this.sampleSize = sampleSize;
         this.processedAt = LocalDateTime.now();
