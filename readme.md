@@ -11,18 +11,32 @@ name-classifier-api/
 │
 ├── src/
 │   ├── main/
-│   │   ├── java/com/yourname/nameclassifier/
+│   │   ├── java/com/hng/task/
 │   │   │   ├── controller/
-│   │   │   │   └── ClassificationController.java
+│   │   │   │   └── GenderizeController.java
 │   │   │   │
 │   │   │   ├── service/
 │   │   │   │   └── ClassificationService.java
 │   │   │   │
 │   │   │   ├── dto/
 │   │   │   │   ├── GenderizeResponse.java
-│   │   │   │   └── ClassificationResponse.java
+│   │   │   │   └── GenderizeRaw.java
 │   │   │   │
-│   │   │   └── NameClassifierApiApplication.java
+│   │   │   ├── exceptions/
+│   │   │   │   ├── CustomBadRequestException.java 
+│   │   │   │   ├── CustomNotfoundException.java
+│   │   │   │   ├── GlobalExceptionHandler.java
+│   │   │   │   ├── UnprocessableEntityException.java
+│   │   │   │
+│   │   │   ├── util/
+│   │   │   │   └── ApiResponse.java 
+│   │   │   │
+│   │   │   ├──config/
+│   │   │   │   ├── RestTemplateConfig.java        
+│   │   │   │   ├── SwaggerConfig.java  
+│   │   │   │   └── WebConfig.java  
+│   │   │   │         
+│   │   │   ├── NameClassifierApiApplication.java
 │   │   │
 │   │   └── resources/
 │   │       └── application.properties
@@ -49,7 +63,7 @@ name-classifier-api/
 #### Example Request
 
 ```
-GET /api/classify?name=john
+GET /api/classify?name=esther
 ```
 
 ---
@@ -60,8 +74,8 @@ GET /api/classify?name=john
 {
   "status": "success",
   "data": {
-    "name": "john",
-    "gender": "male",
+    "name": "esther",
+    "gender": "female",
     "probability": 0.99,
     "sample_size": 1234,
     "is_confident": true,
@@ -138,7 +152,7 @@ The API is deployed and publicly accessible.
 Base URL:
 
 ```
-https://your-api-url.com
+https://genderizeapi-production-e088.up.railway.app
 ```
 
 ---
@@ -149,8 +163,8 @@ Test with:
 
 ```
 /api/classify?name=emma
-/api/classify?name=michael
-/api/classify?name=unknown123
+/api/classify?name=grace
+/api/classify?name=esther
 ```
 
 ---
@@ -163,6 +177,3 @@ Test with:
 
 ---
 
-## 👤 Author
-
-Your Name

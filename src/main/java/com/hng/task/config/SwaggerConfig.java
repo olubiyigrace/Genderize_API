@@ -14,9 +14,11 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 @Server(
                         url = "http://localhost:8080",
                         description = "LOCAL ENV"
+
+
                 ),
                 @Server(
-                        url = "https://genderize-api-production-02bc.up.railway.app",
+                        url = "https://genderizeapi-production-e088.up.railway.app",
                         description = "REMOTE ENV"
                 )
         }
