@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: NameClassifierAPI
+
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+
+genderize:
+  api:
+    base-url: https://api.genderize.io
