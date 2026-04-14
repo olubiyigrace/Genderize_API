@@ -5,6 +5,7 @@ A RESTful API that integrates with the Genderize API to classify names and retur
 ---
 
 ## Project Structure
+
 ```
 name-classifier-api/
 │

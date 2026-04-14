@@ -18,7 +18,7 @@ public class GenderizeController {
     private final GenderizeService genderizeService;
 
     @GetMapping("/api/classify")
-    public ResponseEntity<ApiResponse> classify(@RequestParam @NotBlank(message = "name is required") String name){
+    public ResponseEntity<ApiResponse> classify(@RequestParam @NotBlank(message = "name is required") String name) {
         GenderizeResponse genderizeResponse = genderizeService.checkGenderByName(name);
 
         return ResponseEntity.ok(ApiResponse.success(genderizeResponse));
